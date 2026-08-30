@@ -435,7 +435,7 @@
 
 
 <div class="copyright">
-  &copy; 
+  &copy; 2020 – 
   <span itemprop="copyrightYear">2026</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
@@ -443,7 +443,60 @@
   <span class="author" itemprop="copyrightHolder">小陈同学</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
-  </div>
+  </div><div class="site-runtime" id="site-runtime">
+  <span title="自 2020-03-19 起">🚩 本站已安全运行 <span id="runtime-days">…</span> 天</span>
+</div>
+
+<div class="hitokoto-wrap">
+  <span id="hitokoto-text">「 一言加载中… 」</span>
+  <span class="hitokoto-from" id="hitokoto-from"></span>
+</div>
+
+<script>
+  (function () {
+    // 本站运行天数（建站日：2020-03-19）
+    var start = new Date('2020-03-19T00:00:00+08:00');
+    var days = Math.floor((Date.now() - start.getTime()) / 86400000);
+    var el = document.getElementById('runtime-days');
+    if (el && days >= 0) el.textContent = days;
+
+    // 一言（hitokoto.cn 免费公益 API）
+    fetch('https://v1.hitokoto.cn/?c=i&c=k&encode=json')
+      .then(function (r) { return r.json(); })
+      .then(function (d) {
+        var t = document.getElementById('hitokoto-text');
+        var f = document.getElementById('hitokoto-from');
+        if (t) t.textContent = '「 ' + d.hitokoto + ' 」';
+        if (f) f.textContent = d.from_who ? '—— ' + d.from_who + (d.from ? '《' + d.from + '》' : '') : (d.from ? '——《' + d.from + '》' : '');
+      })
+      .catch(function () {
+        var t = document.getElementById('hitokoto-text');
+        if (t) t.textContent = '「 求知若饥，虚心若愚 」';
+      });
+  })();
+</script>
+
+<style>
+  .site-runtime {
+    margin-top: 6px;
+    font-size: 13px;
+    opacity: .75;
+  }
+  .hitokoto-wrap {
+    margin-top: 4px;
+    font-size: 13px;
+    opacity: .65;
+    max-width: 640px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hitokoto-from {
+    display: block;
+    margin-top: 2px;
+    font-size: 12px;
+  }
+</style>
+
 
     </div>
   </footer>
