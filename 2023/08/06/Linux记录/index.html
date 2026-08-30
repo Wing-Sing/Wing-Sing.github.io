@@ -17,6 +17,7 @@
 
 <link rel="stylesheet" href="https://unpkg.com/@fortawesome/fontawesome-free@6.2.1/css/all.min.css" integrity="sha256-Z1K5uhUaJXA7Ll0XrZ/0JhX4lAtZFpT6jkKrEDT0drU=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://unpkg.com/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"wing-sing.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":true,"version":"8.14.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.json","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
@@ -167,7 +168,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">20</span>
+        <span class="site-state-item-count">16</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -310,7 +311,7 @@
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2024/01/21/%E5%86%99%E5%9C%A82024/" rel="next" title="2024已经开始了">
+                <a href="/2024/01/21/2024%E5%B7%B2%E7%BB%8F%E5%BC%80%E5%A7%8B%E4%BA%86/" rel="next" title="2024已经开始了">
                   2024已经开始了 <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
@@ -417,6 +418,8 @@
 
   
   <script src="https://unpkg.com/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/jquery@3.6.1/dist/jquery.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
 <script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
 
   <script src="https://unpkg.com/hexo-generator-searchdb@1.4.1/dist/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
@@ -424,6 +427,7 @@
 
 
 
+  <script src="/js/third-party/fancybox.js"></script>
 
 
   
@@ -441,6 +445,38 @@
 
 <script>
   (function () {
+    // ===== 年度总结徽章与横幅（仅「年度总结」分类的文章触发） =====
+    fetch('/yearly/data.json')
+      .then(function (r) { return r.json(); })
+      .then(function (data) {
+        var path = decodeURIComponent(location.pathname).replace(/^\//, '');
+        var info = data[path];
+        if (!info) {
+          // 列表页：给年度总结文章的链接加徽章（非文章路径才执行）
+          if (!/^\d{4}\/\d{2}\/\d{2}\//.test(path)) {
+            Object.keys(data).forEach(function (p) {
+              var hrefs = ['/' + p, '/' + encodeURI(p)]; // 只给文章标题链接加徽章，跳过“阅读全文”(#more)
+              document.querySelectorAll(hrefs.map(function (h) { return 'a[href="' + h + '"]'; }).join(',')).forEach(function (a) {
+                if (a.querySelector('.yearly-badge')) return;
+                var b = document.createElement('span');
+                b.className = 'yearly-badge';
+                b.title = '第 ' + data[p].seq + ' 篇年度总结（' + data[p].year + '）';
+                b.textContent = '🎊 年度总结';
+                a.appendChild(b);
+              });
+            });
+          }
+          return;
+        }
+        // 文章页：顶部横幅
+        var banner = document.createElement('div');
+        banner.className = 'yearly-banner';
+        banner.innerHTML = '🎊 这是你的第 <b>' + info.seq + '</b> 篇年度总结（' + info.year + ' 年）· 共写下 ' + info.total + ' 篇 · <a href="/yearly/">查看年度报告 →</a>';
+        var body = document.querySelector('.post-body');
+        if (body) body.parentNode.insertBefore(banner, body);
+      })
+      .catch(function () {});
+
     // 仅文章页显示：路径形如 /2026/08/09/xxx/（首页/归档/关于页不显示）
     if (!/^\/\d{4}\/\d{2}\/\d{2}\//.test(location.pathname)) return;
     var post = document.querySelector('.post-body');
@@ -477,8 +513,33 @@
     }, { passive: true });
     window.addEventListener('resize', update);
     update();
+
   })();
 </script>
+
+<style>
+  .yearly-banner {
+    margin: 0 0 18px;
+    padding: 12px 18px;
+    border-radius: 10px;
+    font-size: 14px;
+    background: linear-gradient(120deg, rgba(79,110,242,.12), rgba(123,92,240,.12));
+    border: 1px solid rgba(123,92,240,.35);
+  }
+  .yearly-banner b { color: #7b5cf0; }
+  .yearly-banner a { color: inherit; font-weight: 600; }
+  .yearly-badge {
+    display: inline-block;
+    margin-left: 8px;
+    padding: 0 8px;
+    font-size: 11px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #4f6ef2, #7b5cf0);
+    color: #fff;
+    vertical-align: 2px;
+    white-space: nowrap;
+  }
+</style>
 
 <style>
   #reading-ring {
