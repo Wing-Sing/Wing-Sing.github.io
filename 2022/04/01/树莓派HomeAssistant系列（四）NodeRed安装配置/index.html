@@ -18,43 +18,43 @@
 <link rel="stylesheet" href="https://unpkg.com/@fortawesome/fontawesome-free@6.2.1/css/all.min.css" integrity="sha256-Z1K5uhUaJXA7Ll0XrZ/0JhX4lAtZFpT6jkKrEDT0drU=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://unpkg.com/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"chenwingsing.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":true,"version":"8.14.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.json","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"wing-sing.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":true,"version":"8.14.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.json","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
     <meta name="description" content="HomeAassistant系列">
 <meta property="og:type" content="article">
 <meta property="og:title" content="树莓派HomeAssistant系列（四）NodeRed安装配置">
-<meta property="og:url" content="https://chenwingsing.github.io/2022/04/01/%E6%A0%91%E8%8E%93%E6%B4%BEHomeAssistant%E7%B3%BB%E5%88%97%EF%BC%88%E5%9B%9B%EF%BC%89NodeRed%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/index.html">
+<meta property="og:url" content="https://wing-sing.github.io/2022/04/01/%E6%A0%91%E8%8E%93%E6%B4%BEHomeAssistant%E7%B3%BB%E5%88%97%EF%BC%88%E5%9B%9B%EF%BC%89NodeRed%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/index.html">
 <meta property="og:site_name" content="小陈同学">
 <meta property="og:description" content="HomeAassistant系列">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://chenwingsing.github.io/images/ha/4/1.png">
-<meta property="og:image" content="https://chenwingsing.github.io/images/ha/4/2.png">
-<meta property="og:image" content="https://chenwingsing.github.io/images/ha/4/3.png">
-<meta property="og:image" content="https://chenwingsing.github.io/images/ha/4/4.png">
-<meta property="og:image" content="https://chenwingsing.github.io/images/ha/4/5.png">
-<meta property="og:image" content="https://chenwingsing.github.io/images/ha/4/6.png">
-<meta property="og:image" content="https://chenwingsing.github.io/images/ha/4/7.png">
-<meta property="og:image" content="https://chenwingsing.github.io/images/ha/4/8.png">
-<meta property="og:image" content="https://chenwingsing.github.io/images/ha/4/9.jpg">
-<meta property="og:image" content="https://chenwingsing.github.io/images/ha/4/10.jpg">
-<meta property="og:image" content="https://chenwingsing.github.io/images/ha/4/11.jpg">
-<meta property="og:image" content="https://chenwingsing.github.io/images/ha/4/12.jpg">
-<meta property="og:image" content="https://chenwingsing.github.io/images/ha/4/13.jpg">
-<meta property="og:image" content="https://chenwingsing.github.io/images/ha/4/14.jpg">
-<meta property="og:image" content="https://chenwingsing.github.io/images/ha/4/15.jpg">
-<meta property="og:image" content="https://chenwingsing.github.io/images/ha/4/16.jpg">
+<meta property="og:image" content="https://wing-sing.github.io/images/ha/4/1.png">
+<meta property="og:image" content="https://wing-sing.github.io/images/ha/4/2.png">
+<meta property="og:image" content="https://wing-sing.github.io/images/ha/4/3.png">
+<meta property="og:image" content="https://wing-sing.github.io/images/ha/4/4.png">
+<meta property="og:image" content="https://wing-sing.github.io/images/ha/4/5.png">
+<meta property="og:image" content="https://wing-sing.github.io/images/ha/4/6.png">
+<meta property="og:image" content="https://wing-sing.github.io/images/ha/4/7.png">
+<meta property="og:image" content="https://wing-sing.github.io/images/ha/4/8.png">
+<meta property="og:image" content="https://wing-sing.github.io/images/ha/4/9.jpg">
+<meta property="og:image" content="https://wing-sing.github.io/images/ha/4/10.jpg">
+<meta property="og:image" content="https://wing-sing.github.io/images/ha/4/11.jpg">
+<meta property="og:image" content="https://wing-sing.github.io/images/ha/4/12.jpg">
+<meta property="og:image" content="https://wing-sing.github.io/images/ha/4/13.jpg">
+<meta property="og:image" content="https://wing-sing.github.io/images/ha/4/14.jpg">
+<meta property="og:image" content="https://wing-sing.github.io/images/ha/4/15.jpg">
+<meta property="og:image" content="https://wing-sing.github.io/images/ha/4/16.jpg">
 <meta property="article:published_time" content="2022-04-01T01:06:07.000Z">
 <meta property="article:modified_time" content="2022-04-02T00:58:04.000Z">
 <meta property="article:author" content="小陈同学">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://chenwingsing.github.io/images/ha/4/1.png">
+<meta name="twitter:image" content="https://wing-sing.github.io/images/ha/4/1.png">
 
 
-<link rel="canonical" href="https://chenwingsing.github.io/2022/04/01/%E6%A0%91%E8%8E%93%E6%B4%BEHomeAssistant%E7%B3%BB%E5%88%97%EF%BC%88%E5%9B%9B%EF%BC%89NodeRed%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/">
+<link rel="canonical" href="https://wing-sing.github.io/2022/04/01/%E6%A0%91%E8%8E%93%E6%B4%BEHomeAssistant%E7%B3%BB%E5%88%97%EF%BC%88%E5%9B%9B%EF%BC%89NodeRed%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://chenwingsing.github.io/2022/04/01/%E6%A0%91%E8%8E%93%E6%B4%BEHomeAssistant%E7%B3%BB%E5%88%97%EF%BC%88%E5%9B%9B%EF%BC%89NodeRed%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/","path":"2022/04/01/树莓派HomeAssistant系列（四）NodeRed安装配置/","title":"树莓派HomeAssistant系列（四）NodeRed安装配置"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://wing-sing.github.io/2022/04/01/%E6%A0%91%E8%8E%93%E6%B4%BEHomeAssistant%E7%B3%BB%E5%88%97%EF%BC%88%E5%9B%9B%EF%BC%89NodeRed%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/","path":"2022/04/01/树莓派HomeAssistant系列（四）NodeRed安装配置/","title":"树莓派HomeAssistant系列（四）NodeRed安装配置"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
 <title>树莓派HomeAssistant系列（四）NodeRed安装配置 | 小陈同学</title>
@@ -221,7 +221,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://chenwingsing.github.io/2022/04/01/%E6%A0%91%E8%8E%93%E6%B4%BEHomeAssistant%E7%B3%BB%E5%88%97%EF%BC%88%E5%9B%9B%EF%BC%89NodeRed%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/">
+    <link itemprop="mainEntityOfPage" href="https://wing-sing.github.io/2022/04/01/%E6%A0%91%E8%8E%93%E6%B4%BEHomeAssistant%E7%B3%BB%E5%88%97%EF%BC%88%E5%9B%9B%EF%BC%89NodeRed%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -306,7 +306,7 @@
   </li>
   <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://chenwingsing.github.io/2022/04/01/%E6%A0%91%E8%8E%93%E6%B4%BEHomeAssistant%E7%B3%BB%E5%88%97%EF%BC%88%E5%9B%9B%EF%BC%89NodeRed%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/" title="树莓派HomeAssistant系列（四）NodeRed安装配置">https://chenwingsing.github.io/2022/04/01/树莓派HomeAssistant系列（四）NodeRed安装配置/</a>
+      <a href="https://wing-sing.github.io/2022/04/01/%E6%A0%91%E8%8E%93%E6%B4%BEHomeAssistant%E7%B3%BB%E5%88%97%EF%BC%88%E5%9B%9B%EF%BC%89NodeRed%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/" title="树莓派HomeAssistant系列（四）NodeRed安装配置">https://wing-sing.github.io/2022/04/01/树莓派HomeAssistant系列（四）NodeRed安装配置/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！

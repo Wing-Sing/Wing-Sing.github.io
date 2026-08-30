@@ -18,29 +18,29 @@
 <link rel="stylesheet" href="https://unpkg.com/@fortawesome/fontawesome-free@6.2.1/css/all.min.css" integrity="sha256-Z1K5uhUaJXA7Ll0XrZ/0JhX4lAtZFpT6jkKrEDT0drU=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://unpkg.com/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"chenwingsing.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":true,"version":"8.14.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.json","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"wing-sing.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":true,"version":"8.14.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.json","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
     <meta name="description" content="折腾了一下午，总算把nginx+php（dashboard要用到）装好了，推荐更换国内源，这样安装软件更加快速。远程桌面用window自带的挺方便，不用桌面的话先打开SSH然后用putty登录。Dashboard一个特别不错的开源项目，可以查看pi的温度，内存各种运行情况，强烈推荐使用。把项目放在nginx的html目录下即可。 1234sudo apt-get install gitcd &#x2F;et">
 <meta property="og:type" content="article">
 <meta property="og:title" content="树莓派dashboard">
-<meta property="og:url" content="https://chenwingsing.github.io/2020/03/20/%E6%A0%91%E8%8E%93%E6%B4%BEdashboard/index.html">
+<meta property="og:url" content="https://wing-sing.github.io/2020/03/20/%E6%A0%91%E8%8E%93%E6%B4%BEdashboard/index.html">
 <meta property="og:site_name" content="小陈同学">
 <meta property="og:description" content="折腾了一下午，总算把nginx+php（dashboard要用到）装好了，推荐更换国内源，这样安装软件更加快速。远程桌面用window自带的挺方便，不用桌面的话先打开SSH然后用putty登录。Dashboard一个特别不错的开源项目，可以查看pi的温度，内存各种运行情况，强烈推荐使用。把项目放在nginx的html目录下即可。 1234sudo apt-get install gitcd &#x2F;et">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://chenwingsing.github.io/images/pi/dashboard.png">
+<meta property="og:image" content="https://wing-sing.github.io/images/pi/dashboard.png">
 <meta property="article:published_time" content="2020-03-20T12:22:08.000Z">
 <meta property="article:modified_time" content="2022-06-25T12:42:04.000Z">
 <meta property="article:author" content="小陈同学">
 <meta property="article:tag" content="dishboard">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://chenwingsing.github.io/images/pi/dashboard.png">
+<meta name="twitter:image" content="https://wing-sing.github.io/images/pi/dashboard.png">
 
 
-<link rel="canonical" href="https://chenwingsing.github.io/2020/03/20/%E6%A0%91%E8%8E%93%E6%B4%BEdashboard/">
+<link rel="canonical" href="https://wing-sing.github.io/2020/03/20/%E6%A0%91%E8%8E%93%E6%B4%BEdashboard/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://chenwingsing.github.io/2020/03/20/%E6%A0%91%E8%8E%93%E6%B4%BEdashboard/","path":"2020/03/20/树莓派dashboard/","title":"树莓派dashboard"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://wing-sing.github.io/2020/03/20/%E6%A0%91%E8%8E%93%E6%B4%BEdashboard/","path":"2020/03/20/树莓派dashboard/","title":"树莓派dashboard"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
 <title>树莓派dashboard | 小陈同学</title>
@@ -206,7 +206,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://chenwingsing.github.io/2020/03/20/%E6%A0%91%E8%8E%93%E6%B4%BEdashboard/">
+    <link itemprop="mainEntityOfPage" href="https://wing-sing.github.io/2020/03/20/%E6%A0%91%E8%8E%93%E6%B4%BEdashboard/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -284,7 +284,7 @@
   </li>
   <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://chenwingsing.github.io/2020/03/20/%E6%A0%91%E8%8E%93%E6%B4%BEdashboard/" title="树莓派dashboard">https://chenwingsing.github.io/2020/03/20/树莓派dashboard/</a>
+      <a href="https://wing-sing.github.io/2020/03/20/%E6%A0%91%E8%8E%93%E6%B4%BEdashboard/" title="树莓派dashboard">https://wing-sing.github.io/2020/03/20/树莓派dashboard/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
